@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 1388px;
-            height: 867px;
+            width: 1274px;
+            height: 639px;
         }
         </style>
         <title></title>
@@ -28,11 +28,12 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/04ChabroviceMilada_1.js"></script>
+        <script src="data/ChabroviceLimit_1.js"></script>
+        <script src="data/04Chabrovice_2.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.60829339434058,13.866772922952634],[50.67640621690459,14.030082848581054]]);
+        }).fitBounds([[50.60837646553042,13.886024984477107],[50.67655206084262,14.084412351161918]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         var bounds_group = new L.featureGroup([]);
@@ -44,7 +45,102 @@
         });
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
-        function pop_04ChabroviceMilada_1(feature, layer) {
+        function pop_ChabroviceLimit_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['descriptio'] !== null ? Autolinker.link(String(feature.properties['descriptio'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['timestamp'] !== null ? Autolinker.link(String(feature.properties['timestamp'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['begin'] !== null ? Autolinker.link(String(feature.properties['begin'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['end'] !== null ? Autolinker.link(String(feature.properties['end'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['altitudeMo'] !== null ? Autolinker.link(String(feature.properties['altitudeMo'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tessellate'] !== null ? Autolinker.link(String(feature.properties['tessellate'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['extrude'] !== null ? Autolinker.link(String(feature.properties['extrude'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['visibility'] !== null ? Autolinker.link(String(feature.properties['visibility'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['drawOrder'] !== null ? Autolinker.link(String(feature.properties['drawOrder'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['icon'] !== null ? Autolinker.link(String(feature.properties['icon'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name_2'] !== null ? Autolinker.link(String(feature.properties['Name_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['descript_1'] !== null ? Autolinker.link(String(feature.properties['descript_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['timestamp_'] !== null ? Autolinker.link(String(feature.properties['timestamp_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['begin_2'] !== null ? Autolinker.link(String(feature.properties['begin_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['end_2'] !== null ? Autolinker.link(String(feature.properties['end_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['altitude_1'] !== null ? Autolinker.link(String(feature.properties['altitude_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['tessella_1'] !== null ? Autolinker.link(String(feature.properties['tessella_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['extrude_2'] !== null ? Autolinker.link(String(feature.properties['extrude_2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['visibili_1'] !== null ? Autolinker.link(String(feature.properties['visibili_1'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['drawOrder_'] !== null ? Autolinker.link(String(feature.properties['drawOrder_'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['icon_2'] !== null ? Autolinker.link(String(feature.properties['icon_2'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_ChabroviceLimit_1_0() {
+            return {
+                pane: 'pane_ChabroviceLimit_1',
+                opacity: 1,
+                color: 'rgba(234,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 6.0, 
+                fillOpacity: 0,
+            }
+        }
+        map.createPane('pane_ChabroviceLimit_1');
+        map.getPane('pane_ChabroviceLimit_1').style.zIndex = 401;
+        map.getPane('pane_ChabroviceLimit_1').style['mix-blend-mode'] = 'normal';
+        var layer_ChabroviceLimit_1 = new L.geoJson(json_ChabroviceLimit_1, {
+            attribution: '',
+            pane: 'pane_ChabroviceLimit_1',
+            onEachFeature: pop_ChabroviceLimit_1,
+            style: style_ChabroviceLimit_1_0,
+        });
+        bounds_group.addLayer(layer_ChabroviceLimit_1);
+        map.addLayer(layer_ChabroviceLimit_1);
+        function pop_04Chabrovice_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
@@ -91,11 +187,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_04ChabroviceMilada_1_0(feature) {
+        function style_04Chabrovice_2_0(feature) {
             switch(String(feature.properties['CLC_lv3'])) {
                 case '211':
                     return {
-                pane: 'pane_04ChabroviceMilada_1',
+                pane: 'pane_04Chabrovice_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.413)',
                 dashArray: '',
@@ -109,7 +205,7 @@
                     break;
                 case '231':
                     return {
-                pane: 'pane_04ChabroviceMilada_1',
+                pane: 'pane_04Chabrovice_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.413)',
                 dashArray: '',
@@ -123,7 +219,7 @@
                     break;
                 case '311':
                     return {
-                pane: 'pane_04ChabroviceMilada_1',
+                pane: 'pane_04Chabrovice_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.413)',
                 dashArray: '',
@@ -137,7 +233,7 @@
                     break;
                 case '324':
                     return {
-                pane: 'pane_04ChabroviceMilada_1',
+                pane: 'pane_04Chabrovice_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.413)',
                 dashArray: '',
@@ -151,7 +247,7 @@
                     break;
                 case '512':
                     return {
-                pane: 'pane_04ChabroviceMilada_1',
+                pane: 'pane_04Chabrovice_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.413)',
                 dashArray: '',
@@ -165,42 +261,42 @@
                     break;
             }
         }
-        map.createPane('pane_04ChabroviceMilada_1');
-        map.getPane('pane_04ChabroviceMilada_1').style.zIndex = 401;
-        map.getPane('pane_04ChabroviceMilada_1').style['mix-blend-mode'] = 'normal';
-        var layer_04ChabroviceMilada_1 = new L.geoJson(json_04ChabroviceMilada_1, {
+        map.createPane('pane_04Chabrovice_2');
+        map.getPane('pane_04Chabrovice_2').style.zIndex = 402;
+        map.getPane('pane_04Chabrovice_2').style['mix-blend-mode'] = 'normal';
+        var layer_04Chabrovice_2 = new L.geoJson(json_04Chabrovice_2, {
             attribution: '',
-            pane: 'pane_04ChabroviceMilada_1',
-            onEachFeature: pop_04ChabroviceMilada_1,
-            style: style_04ChabroviceMilada_1_0,
+            pane: 'pane_04Chabrovice_2',
+            onEachFeature: pop_04Chabrovice_2,
+            style: style_04Chabrovice_2_0,
         });
-        bounds_group.addLayer(layer_04ChabroviceMilada_1);
-        map.addLayer(layer_04ChabroviceMilada_1);
+        bounds_group.addLayer(layer_04Chabrovice_2);
+        map.addLayer(layer_04Chabrovice_2);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'04ChabroviceMilada<br /><table><tr><td style="text-align: center;"><img src="legend/04ChabroviceMilada_1_2110.png" /></td><td>211</td></tr><tr><td style="text-align: center;"><img src="legend/04ChabroviceMilada_1_2311.png" /></td><td>231</td></tr><tr><td style="text-align: center;"><img src="legend/04ChabroviceMilada_1_3112.png" /></td><td>311</td></tr><tr><td style="text-align: center;"><img src="legend/04ChabroviceMilada_1_3243.png" /></td><td>324</td></tr><tr><td style="text-align: center;"><img src="legend/04ChabroviceMilada_1_5124.png" /></td><td>512</td></tr></table>': layer_04ChabroviceMilada_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'04Chabrovice<br /><table><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_211Nonirrigatedarableland0.png" /></td><td>211: Non-irrigated arable land</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_231Pastures1.png" /></td><td>231: Pastures</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_311Broadleavedforest2.png" /></td><td>311: Broad-leaved forest</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_324Transitionalwoodlandshrub3.png" /></td><td>324: Transitional woodland-shrub</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_512Waterbodies4.png" /></td><td>512: Water bodies</td></tr></table>': layer_04Chabrovice_2,'<img src="legend/ChabroviceLimit_1.png" /> ChabroviceLimit': layer_ChabroviceLimit_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
-        layer_04ChabroviceMilada_1.eachLayer(function(layer) {
+        layer_04Chabrovice_2.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['descriptio'] !== null?String('<div style="color: #fbe344; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['descriptio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_04ChabroviceMilada_1'});
+            layer.bindTooltip((layer.feature.properties['descriptio'] !== null?String('<div style="color: #fbe344; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['descriptio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_04Chabrovice_2'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_04ChabroviceMilada_1]);
+        resetLabels([layer_04Chabrovice_2]);
         map.on("zoomend", function(){
-            resetLabels([layer_04ChabroviceMilada_1]);
+            resetLabels([layer_04Chabrovice_2]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_04ChabroviceMilada_1]);
+            resetLabels([layer_04Chabrovice_2]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_04ChabroviceMilada_1]);
+            resetLabels([layer_04Chabrovice_2]);
         });
         </script>
     </body>

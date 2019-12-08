@@ -43,7 +43,7 @@
         .leaflet-touch .leaflet-control-geocoder-icon,
         .leaflet-control-search .search-button,
          .leaflet-control-measure {
-            background-color: #f8f8f8 !important;
+            background-color: #fefffe !important;
             border-radius: 0px !important;
             color: #000000 !important;
         }
@@ -57,7 +57,7 @@
             color: #0078A8 !important;
         }
         .leaflet-control-scale-line {
-            border: 2px solid #f8f8f8 !important;
+            border: 2px solid #fefffe !important;
             border-top: none !important;
             color: black !important;
         }
@@ -89,7 +89,7 @@
             border-radius: 4px !important;
         }
         .leaflet-control-measure .leaflet-control-measure-interaction {
-            background-color: #f8f8f8 !important;
+            background-color: #fefffe !important;
         }
         .leaflet-touch .leaflet-control-measure
         .leaflet-control-measure-toggle,
@@ -98,7 +98,7 @@
             width: 30px !important;
             height: 30px !important;
             border-radius: 0px !important;
-            background-color: #f8f8f8 !important;
+            background-color: #fefffe !important;
             color: #000000 !important;
             font-size: 13px;
             line-height: 30px;
@@ -106,5 +106,5 @@
             text-indent: 0%;
         }
         .leaflet-control-layers-toggle {
-            background-color: #f8f8f8 !important;
+            background-color: #fefffe !important;
         }

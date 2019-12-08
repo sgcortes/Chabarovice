@@ -8,6 +8,7 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         #map {
             width: 1298px;
@@ -28,14 +29,42 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
+        <script src="js/leaflet-measure.js"></script>
         <script src="data/ChabroviceLimit_1.js"></script>
         <script src="data/04Chabrovice_2.js"></script>
         <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+        }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[50.6073134334278,13.879221159938217],[50.673781285077915,14.029334710754725]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        var measureControl = new L.Control.Measure({
+            position: 'topleft',
+            primaryLengthUnit: 'meters',
+            secondaryLengthUnit: 'kilometers',
+            primaryAreaUnit: 'sqmeters',
+            secondaryAreaUnit: 'hectares'
+        });
+        measureControl.addTo(map);
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .innerHTML = '';
+        document.getElementsByClassName('leaflet-control-measure-toggle')[0]
+        .className += ' fas fa-ruler';
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
@@ -46,6 +75,14 @@
         layer_GoogleSatellite_0;
         map.addLayer(layer_GoogleSatellite_0);
         function pop_ChabroviceLimit_1(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
@@ -141,6 +178,14 @@
         bounds_group.addLayer(layer_ChabroviceLimit_1);
         map.addLayer(layer_ChabroviceLimit_1);
         function pop_04Chabrovice_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Name'] !== null ? Autolinker.link(String(feature.properties['Name'])) : '') + '</td>\
@@ -173,16 +218,16 @@
                         <td colspan="2">' + (feature.properties['5_CICESv51'] !== null ? Autolinker.link(String(feature.properties['5_CICESv51'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">AREA</th>\
-                        <td>' + (feature.properties['AREA'] !== null ? Autolinker.link(String(feature.properties['AREA'])) : '') + '</td>\
+                        <th scope="row">AREA(Ha)</th>\
+                        <td>' + (feature.properties['AREA(Ha)'] !== null ? Autolinker.link(String(feature.properties['AREA(Ha)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Perimeter</th>\
-                        <td>' + (feature.properties['Perimeter'] !== null ? Autolinker.link(String(feature.properties['Perimeter'])) : '') + '</td>\
+                        <th scope="row">Perimeter(km)</th>\
+                        <td>' + (feature.properties['Perimeter(km)'] !== null ? Autolinker.link(String(feature.properties['Perimeter(km)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">AREAbyCLC3</th>\
-                        <td>' + (feature.properties['AREAbyCLC3'] !== null ? Autolinker.link(String(feature.properties['AREAbyCLC3'])) : '') + '</td>\
+                        <th scope="row">CLC3_AREA_sum(Ha)</th>\
+                        <td>' + (feature.properties['CLC3_AREA_sum(Ha)'] !== null ? Autolinker.link(String(feature.properties['CLC3_AREA_sum(Ha)'])) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['Descriptions_CLC_Level2_ENG_txCLC2'] !== null ? Autolinker.link(String(feature.properties['Descriptions_CLC_Level2_ENG_txCLC2'])) : '') + '</td>\
@@ -203,70 +248,70 @@
                     return {
                 pane: 'pane_04Chabrovice_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.413)',
+                color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,168,0.413)',
+                fillColor: 'rgba(255,255,168,0.501)',
             }
                     break;
                 case '231':
                     return {
                 pane: 'pane_04Chabrovice_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.413)',
+                color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(230,230,77,0.413)',
+                fillColor: 'rgba(230,230,77,0.501)',
             }
                     break;
                 case '311':
                     return {
                 pane: 'pane_04Chabrovice_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.413)',
+                color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(128,255,0,0.413)',
+                fillColor: 'rgba(128,255,0,0.501)',
             }
                     break;
                 case '324':
                     return {
                 pane: 'pane_04Chabrovice_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.413)',
+                color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(166,242,0,0.413)',
+                fillColor: 'rgba(166,242,0,0.501)',
             }
                     break;
                 case '512':
                     return {
                 pane: 'pane_04Chabrovice_2',
                 opacity: 1,
-                color: 'rgba(35,35,35,0.413)',
+                color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(128,242,230,0.413)',
+                fillColor: 'rgba(128,242,230,0.501)',
             }
                     break;
             }
@@ -285,19 +330,6 @@
         var baseMaps = {};
         L.control.layers(baseMaps,{'04Chabrovice<br /><table><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_211Nonirrigatedarableland0.png" /></td><td>211: Non-irrigated arable land</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_231Pastures1.png" /></td><td>231: Pastures</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_311Broadleavedforest2.png" /></td><td>311: Broad-leaved forest</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_324Transitionalwoodlandshrub3.png" /></td><td>324: Transitional woodland-shrub</td></tr><tr><td style="text-align: center;"><img src="legend/04Chabrovice_2_512Waterbodies4.png" /></td><td>512: Water bodies</td></tr></table>': layer_04Chabrovice_2,'<img src="legend/ChabroviceLimit_1.png" /> ChabroviceLimit': layer_ChabroviceLimit_1,"Google Satellite": layer_GoogleSatellite_0,},{collapsed:false}).addTo(map);
         setBounds();
-        var i = 0;
-        layer_04Chabrovice_2.eachLayer(function(layer) {
-            var context = {
-                feature: layer.feature,
-                variables: {}
-            };
-            layer.bindTooltip((layer.feature.properties['descriptio'] !== null?String('<div style="color: #fbe344; font-size: 10pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['descriptio']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_04Chabrovice_2'});
-            labels.push(layer);
-            totalMarkers += 1;
-              layer.added = true;
-              addLabel(layer, i);
-              i++;
-        });
         resetLabels([layer_04Chabrovice_2]);
         map.on("zoomend", function(){
             resetLabels([layer_04Chabrovice_2]);

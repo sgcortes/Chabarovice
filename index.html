@@ -10,8 +10,8 @@
         <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
         <style>
         #map {
-            width: 1274px;
-            height: 639px;
+            width: 1298px;
+            height: 867px;
         }
         </style>
         <title></title>
@@ -33,7 +33,7 @@
         <script>
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.60837646553042,13.886024984477107],[50.67655206084262,14.084412351161918]]);
+        }).fitBounds([[50.6073134334278,13.879221159938217],[50.673781285077915,14.029334710754725]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
         var bounds_group = new L.featureGroup([]);
@@ -181,7 +181,17 @@
                         <td>' + (feature.properties['Perimeter'] !== null ? Autolinker.link(String(feature.properties['Perimeter'])) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['AREAbyCLC3'] !== null ? Autolinker.link(String(feature.properties['AREAbyCLC3'])) : '') + '</td>\
+                        <th scope="row">AREAbyCLC3</th>\
+                        <td>' + (feature.properties['AREAbyCLC3'] !== null ? Autolinker.link(String(feature.properties['AREAbyCLC3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Descriptions_CLC_Level2_ENG_txCLC2'] !== null ? Autolinker.link(String(feature.properties['Descriptions_CLC_Level2_ENG_txCLC2'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Descriptions_CLC_Level3_ENG_txCLC3'] !== null ? Autolinker.link(String(feature.properties['Descriptions_CLC_Level3_ENG_txCLC3'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['CLClv3_AreaTotals_None'] !== null ? Autolinker.link(String(feature.properties['CLClv3_AreaTotals_None'])) : '') + '</td>\
                     </tr>\
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});

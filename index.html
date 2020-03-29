@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="css/leaflet-measure.css">
         <style>
         #map {
-            width: 952px;
+            width: 879px;
             height: 820px;
         }
         </style>
@@ -34,7 +34,7 @@
         <script src="data/ChabaroviceCLC_2.js"></script>
         <script src="data/3111Environmentforsportandrecreation_3.js"></script>
         <script src="data/2262ClimateRegulation_4.js"></script>
-        <script src="data/2213WaterFlowRegulation_5.js"></script>
+        <script src="data/3112Usingnaturetodistress_5.js"></script>
         <script src="data/2211Erosionratesregulation_6.js"></script>
         <script src="data/1111FoodProvision_7.js"></script>
         <script>
@@ -55,7 +55,7 @@
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[50.61413909748132,13.89707343898078],[50.666791934049364,13.99177069304093]]);
+        }).fitBounds([[50.61425957698318,13.900549977540159],[50.66667393844842,13.988290902223845]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var measureControl = new L.Control.Measure({
@@ -224,8 +224,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -234,10 +234,6 @@
                     <tr>\
                         <th scope="row">3111</th>\
                         <td>' + (feature.properties['3111'] !== null ? Autolinker.link(feature.properties['3111'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">AREA(Ha)</th>\
-                        <td>' + (feature.properties['AREA(Ha)'] !== null ? Autolinker.link(feature.properties['AREA(Ha)'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perimeter(</th>\
@@ -384,8 +380,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -525,8 +521,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -632,7 +628,7 @@
         });
         bounds_group.addLayer(layer_2262ClimateRegulation_4);
         map.addLayer(layer_2262ClimateRegulation_4);
-        function pop_2213WaterFlowRegulation_5(feature, layer) {
+        function pop_3112Usingnaturetodistress_5(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     for (i in e.target._eventParents) {
@@ -666,8 +662,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -695,11 +691,11 @@
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_2213WaterFlowRegulation_5_0(feature) {
-            switch(String(feature.properties['2213'])) {
+        function style_3112Usingnaturetodistress_5_0(feature) {
+            switch(String(feature.properties['3112'])) {
                 case '0':
                     return {
-                pane: 'pane_2213WaterFlowRegulation_5',
+                pane: 'pane_3112Usingnaturetodistress_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
@@ -708,13 +704,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(247,251,255,0.501)',
+                fillColor: 'rgba(215,25,28,0.501)',
                 interactive: true,
             }
                     break;
                 case '1':
                     return {
-                pane: 'pane_2213WaterFlowRegulation_5',
+                pane: 'pane_3112Usingnaturetodistress_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
@@ -723,13 +719,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(200,221,240,0.501)',
+                fillColor: 'rgba(253,174,97,0.501)',
                 interactive: true,
             }
                     break;
                 case '7':
                     return {
-                pane: 'pane_2213WaterFlowRegulation_5',
+                pane: 'pane_3112Usingnaturetodistress_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
@@ -738,13 +734,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(115,179,216,0.501)',
+                fillColor: 'rgba(255,255,191,0.501)',
                 interactive: true,
             }
                     break;
                 case '10':
                     return {
-                pane: 'pane_2213WaterFlowRegulation_5',
+                pane: 'pane_3112Usingnaturetodistress_5',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.501)',
                 dashArray: '',
@@ -753,26 +749,26 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(40,121,185,0.501)',
+                fillColor: 'rgba(171,221,164,0.501)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_2213WaterFlowRegulation_5');
-        map.getPane('pane_2213WaterFlowRegulation_5').style.zIndex = 405;
-        map.getPane('pane_2213WaterFlowRegulation_5').style['mix-blend-mode'] = 'normal';
-        var layer_2213WaterFlowRegulation_5 = new L.geoJson(json_2213WaterFlowRegulation_5, {
+        map.createPane('pane_3112Usingnaturetodistress_5');
+        map.getPane('pane_3112Usingnaturetodistress_5').style.zIndex = 405;
+        map.getPane('pane_3112Usingnaturetodistress_5').style['mix-blend-mode'] = 'normal';
+        var layer_3112Usingnaturetodistress_5 = new L.geoJson(json_3112Usingnaturetodistress_5, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_2213WaterFlowRegulation_5',
-            layerName: 'layer_2213WaterFlowRegulation_5',
-            pane: 'pane_2213WaterFlowRegulation_5',
-            onEachFeature: pop_2213WaterFlowRegulation_5,
-            style: style_2213WaterFlowRegulation_5_0,
+            dataVar: 'json_3112Usingnaturetodistress_5',
+            layerName: 'layer_3112Usingnaturetodistress_5',
+            pane: 'pane_3112Usingnaturetodistress_5',
+            onEachFeature: pop_3112Usingnaturetodistress_5,
+            style: style_3112Usingnaturetodistress_5_0,
         });
-        bounds_group.addLayer(layer_2213WaterFlowRegulation_5);
-        map.addLayer(layer_2213WaterFlowRegulation_5);
+        bounds_group.addLayer(layer_3112Usingnaturetodistress_5);
+        map.addLayer(layer_3112Usingnaturetodistress_5);
         function pop_2211Erosionratesregulation_6(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -807,8 +803,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -948,8 +944,8 @@
                         <td>' + (feature.properties['2211'] !== null ? Autolinker.link(feature.properties['2211'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">2213</th>\
-                        <td>' + (feature.properties['2213'] !== null ? Autolinker.link(feature.properties['2213'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
+                        <th scope="row">3112</th>\
+                        <td>' + (feature.properties['3112'] !== null ? Autolinker.link(feature.properties['3112'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">2262</th>\
@@ -958,10 +954,6 @@
                     <tr>\
                         <th scope="row">3111</th>\
                         <td>' + (feature.properties['3111'] !== null ? Autolinker.link(feature.properties['3111'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <th scope="row">AREA(Ha)</th>\
-                        <td>' + (feature.properties['AREA(Ha)'] !== null ? Autolinker.link(feature.properties['AREA(Ha)'].toLocaleString(), {truncate: {length: 30, location: 'smart'}}) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Perimeter(</th>\
@@ -1030,17 +1022,17 @@
         bounds_group.addLayer(layer_1111FoodProvision_7);
         map.addLayer(layer_1111FoodProvision_7);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'1111: Food Provision<br /><table><tr><td style="text-align: center;"><img src="legend/1111FoodProvision_7_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/1111FoodProvision_7_11.png" /></td><td>1</td></tr></table>': layer_1111FoodProvision_7,'2211: Erosion rates regulation<br /><table><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_31.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_52.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_103.png" /></td><td>10</td></tr></table>': layer_2211Erosionratesregulation_6,'2213: Water Flow Regulation <br /><table><tr><td style="text-align: center;"><img src="legend/2213WaterFlowRegulation_5_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/2213WaterFlowRegulation_5_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/2213WaterFlowRegulation_5_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/2213WaterFlowRegulation_5_103.png" /></td><td>10</td></tr></table>': layer_2213WaterFlowRegulation_5,'2262: Climate Regulation<br /><table><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_103.png" /></td><td>10</td></tr></table>': layer_2262ClimateRegulation_4,'3111: Environment for sport and recreation<br /><table><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_103.png" /></td><td>10</td></tr></table>': layer_3111Environmentforsportandrecreation_3,'Chabarovice CLC<br /><table><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_211Nonirrigatedarableland0.png" /></td><td>211: Non-irrigated arable land</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_231Pastures1.png" /></td><td>231: Pastures</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_311Broadleavedforest2.png" /></td><td>311: Broad-leaved forest</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_324Transitionalwoodlandshrub3.png" /></td><td>324: Transitional woodland-shrub</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_512Waterbodies4.png" /></td><td>512: Water bodies</td></tr></table>': layer_ChabaroviceCLC_2,'<img src="legend/ChabroviceLimit_1.png" /> ChabroviceLimit': layer_ChabroviceLimit_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
+        L.control.layers(baseMaps,{'1111: Food Provision<br /><table><tr><td style="text-align: center;"><img src="legend/1111FoodProvision_7_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/1111FoodProvision_7_11.png" /></td><td>1</td></tr></table>': layer_1111FoodProvision_7,'2211: Erosion rates regulation<br /><table><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_31.png" /></td><td>3</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_52.png" /></td><td>5</td></tr><tr><td style="text-align: center;"><img src="legend/2211Erosionratesregulation_6_103.png" /></td><td>10</td></tr></table>': layer_2211Erosionratesregulation_6,'3112: Using nature to distress<br /><table><tr><td style="text-align: center;"><img src="legend/3112Usingnaturetodistress_5_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/3112Usingnaturetodistress_5_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/3112Usingnaturetodistress_5_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/3112Usingnaturetodistress_5_103.png" /></td><td>10</td></tr></table>': layer_3112Usingnaturetodistress_5,'2262: Climate Regulation<br /><table><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/2262ClimateRegulation_4_103.png" /></td><td>10</td></tr></table>': layer_2262ClimateRegulation_4,'3111: Environment for sport and recreation<br /><table><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_00.png" /></td><td>0</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_11.png" /></td><td>1</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_72.png" /></td><td>7</td></tr><tr><td style="text-align: center;"><img src="legend/3111Environmentforsportandrecreation_3_103.png" /></td><td>10</td></tr></table>': layer_3111Environmentforsportandrecreation_3,'Chabarovice CLC<br /><table><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_211Nonirrigatedarableland0.png" /></td><td>211: Non-irrigated arable land</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_231Pastures1.png" /></td><td>231: Pastures</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_311Broadleavedforest2.png" /></td><td>311: Broad-leaved forest</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_324Transitionalwoodlandshrub3.png" /></td><td>324: Transitional woodland-shrub</td></tr><tr><td style="text-align: center;"><img src="legend/ChabaroviceCLC_2_512Waterbodies4.png" /></td><td>512: Water bodies</td></tr></table>': layer_ChabaroviceCLC_2,'<img src="legend/ChabroviceLimit_1.png" /> ChabroviceLimit': layer_ChabroviceLimit_1,"Google Satellite": layer_GoogleSatellite_0,}).addTo(map);
         setBounds();
-        resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_2213WaterFlowRegulation_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
+        resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_3112Usingnaturetodistress_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
         map.on("zoomend", function(){
-            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_2213WaterFlowRegulation_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
+            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_3112Usingnaturetodistress_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_2213WaterFlowRegulation_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
+            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_3112Usingnaturetodistress_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_2213WaterFlowRegulation_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
+            resetLabels([layer_ChabaroviceCLC_2,layer_3111Environmentforsportandrecreation_3,layer_2262ClimateRegulation_4,layer_3112Usingnaturetodistress_5,layer_2211Erosionratesregulation_6,layer_1111FoodProvision_7]);
         });
         </script>
     </body>
